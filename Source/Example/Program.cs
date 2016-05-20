@@ -16,17 +16,22 @@ namespace Example
 
             var scenarios = new Scenario[]
             {
-                new S01_Provision_new_stream(),
-                new S02_Open_stream_for_writing(),
-                new S03_Try_open_stream_for_writing(),
-                new S04_Write_to_stream(),
-                new S05_Read_from_stream(),
-                new S06_Include_additional_entities(),
-                new S07_Custom_stream_metadata(),
-                new S08_Concurrency_conflicts(),
-                new S09_Handling_duplicates(),
-                new S10_Stream_directory(),
-                new S11_Sharding_streams(),
+                //new S01_Provision_new_stream(),
+                //new S02_Open_stream_for_writing(),
+                //new S03_Try_open_stream_for_writing(),
+                //new S04_Write_to_stream(),
+                //new S05_Read_from_stream(),
+                //new S06_Include_additional_entities(),
+                //new S07_Custom_stream_metadata(),
+                //new S08_Concurrency_conflicts(),
+                //new S09_Handling_duplicates(),
+                //new S10_Stream_directory(),
+                //new S11_Sharding_streams(),
+                ////new SC01_Provision_new_stream(),
+                ////new SC02_Open_stream_for_writing(),
+                ////new SC04_Write_to_stream(),
+                ////new SC05_Read_from_stream(),
+                new SC06_Read_from_log(),
             };
 
             for (var i = 0; i < scenarios.Length; i++)

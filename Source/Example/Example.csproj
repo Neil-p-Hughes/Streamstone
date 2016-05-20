@@ -73,6 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model.cs" />
+    <Compile Include="Scenarios\SC06_Read_from_log.cs" />
+    <Compile Include="Scenarios\SC05_Read_from_stream.cs" />
+    <Compile Include="Scenarios\SC04_Write_to_stream.cs" />
+    <Compile Include="Scenarios\SC02_Open_stream_for_writing.cs" />
+    <Compile Include="Scenarios\SC01_Provision_new_stream.cs" />
     <Compile Include="Scenarios\S06_Include_additional_entities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Scenario.cs" />

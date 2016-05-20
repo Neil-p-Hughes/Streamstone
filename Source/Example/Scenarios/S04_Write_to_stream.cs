@@ -6,6 +6,8 @@ using Newtonsoft.Json.Bson;
 
 using Streamstone;
 using System.Diagnostics;
+using System.Collections.Generic;
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Example.Scenarios
 {
@@ -21,10 +23,18 @@ namespace Example.Scenarios
         void WriteToExistingOrCreateNewStream()
         {
             var existent = Stream.TryOpen(Partition);
+            var properties = new Dictionary<string, EntityProperty>
+            {
+                {"GlobalDictionaryPartitionKeySize", new EntityProperty(0)},
+                {"GlobalDictionaryPartitionKeyBase", new EntityProperty("GlobalDictionaryPartition")},
+                { "GlobalDictionary",  new EntityProperty(true)}
+            };
+
+            //Stream.Provision(partition, StreamProperties.From(properties));
 
             var stream = existent.Found 
                 ? existent.Stream 
-                : new Stream(Partition);
+                : new Stream(Partition, StreamProperties.From(properties));
 
             Console.WriteLine("Writing to new stream in partition '{0}'", stream.Partition);
 

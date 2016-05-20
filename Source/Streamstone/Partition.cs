@@ -2,6 +2,7 @@
 using System.Linq;
 
 using Microsoft.WindowsAzure.Storage.Table;
+using Streamstone.StreamCollection;
 
 namespace Streamstone
 {
@@ -84,6 +85,16 @@ namespace Streamstone
         {
             return string.Format("{0}{1}", RowKeyPrefix, StreamEntity.FixedRowKey);
         }
+
+        internal string StreamCollectionDictionaryRowKey()
+        {
+            return string.Format("{0}{1}", RowKeyPrefix, StreamCollectionDictionaryEntity.FixedRowKey);
+        }
+        internal string StreamCollectionLogRowKey()
+        {
+            return string.Format("{0}{1}", RowKeyPrefix, StreamCollectionLogEntity.FixedRowKey);
+        }
+        
 
         internal string EventVersionRowKey(int version)
         {

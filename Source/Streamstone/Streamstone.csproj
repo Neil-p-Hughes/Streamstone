@@ -39,6 +39,10 @@
       <HintPath>..\..\packages\WindowsAzure.Storage.6.1.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -60,6 +64,25 @@
     <Compile Include="EntityOperation.cs" />
     <Compile Include="EventId.cs" />
     <Compile Include="EventIncludes.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLog.Api.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionary.Api.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLog.Header.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionary.Header.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLog.Operations.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionary.Operations.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLogEntity.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLogOpenResult.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLogProperties.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLogPropertyHeader.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionaryPropertyHeader.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionaryEntity.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionaryOpenResult.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionaryProperties.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLogSlice.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionarySlice.cs" />
+    <Compile Include="StreamCollections\StreamCollectionDictionaryWriteResult.cs" />
+    <Compile Include="StreamCollections\StreamCollectionLogWriteResult.cs" />
+    <Compile Include="StreamCollections\StreamCollectionStreamEntity.cs" />
     <Compile Include="Hasher.cs" />
     <Compile Include="Include.cs" />
     <Compile Include="Event.cs" />
@@ -84,6 +107,7 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Packages.config">
       <SubType>Designer</SubType>
     </None>

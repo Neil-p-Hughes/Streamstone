@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
+using Streamstone.StreamCollection;
 
 namespace Streamstone
 {
@@ -106,6 +107,7 @@ namespace Streamstone
             public StreamWriteResult Execute()
             {
                 var current = stream;
+                var original = stream;
 
                 foreach (var chunk in Chunks())
                 {
@@ -122,6 +124,10 @@ namespace Streamstone
 
                     current = batch.Result();
                 }
+                
+                //update streamcollections if they are tracked
+                StreamCollectionDictionary.TrackStream(current, original);
+                StreamCollectionLog.TrackStream(current, original);
 
                 return new StreamWriteResult(current, events.ToArray());
             }
